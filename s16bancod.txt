@@ -1,0 +1,52 @@
+SELECT * FROM tbPrato
+INSERT INTO tbPrato(nomeprato,descricao,categoria,valor)
+VALUES ('Espaguete', 'Prato italiano com massa', 'massa', 45.00),
+        ('Sorvete de unicornio', 'Sorvete feito com magia de unicornio', 'doce magico', 100.40),
+         ('Bolo de capivara', 'bolo de canela em formato de capivara', 'bolo', 25.00),
+          ('Pastel de arco-iris', 'Pastel com recheio colorido brilhoso', 'massa', 45.50),
+           ('Mousse de pirinpinpin', 'Mousse cremoso de pó de pirinpinpin', 'mousse', 37.50)
+           
+SELECT * FROM tbCliente       
+INSERT into tbCliente(nome,email,telefone,cpf)
+VALUES ('Matheus', 'Femboyykawaii@gmail.com', '(97) 94902-1821', '894.410.950-87'),
+        ('Jhon', 'FurrycuteKawai@gmail.com', '(71) 94864-9895', '305.340.810-45'),
+        ('Yuri', 'Budafalido00@gmail.com', '(65) 90946-3782', '057.346.780-31'),
+         ('Vinicius', 'Gaymersplay011@gmail.com', '(22) 96859-8260', '323.146.530-33'),
+         ('Rafael', 'Rafaeldaconceicao@gmail.com', '(11) 98082-2235', '253.876.090-96')
+         
+SELECT * FROM tbGarcom
+INSERT INTO tbGarcom(nomeGarcom)
+values ('Michael jackson'),
+       ('Pdiddy')
+       
+SELECT * FROM tbMesa
+insert INTO tbMesa(capacidade,statusmesa,numero)
+values ('69','reservado','001'),
+        ('24', 'Livre', '101') 
+
+SELECT * FROM tbPedido
+
+insert into tbPedido(idmesa, idcliente, idgarcom, formapagamento, statuspedido, datahora, valorfinal)
+VALUES(1,2,3,'Debito', 'Preparando', '5050-07-15 2:00', 1000.50),
+(1,1,1,'Credito', 'A caminho', '2001-09-31 4:45', 500.30),
+(2,1,3,'Pix', 'Entregue','1030-03-23 00:30', 100.50),
+(3,2,1,'Credito', 'Entregue', '1500-02-23 0:00', 500.00);
+        
+update tbCliente
+SET nome = 'Tiririca'
+WHERE idcliente = 5
+
+update tbCliente
+SET nome = 'Justinbieber'
+WHERE idcliente = 4
+
+UPDATE tbPrato
+set valor = 500.50
+where idprato = 2
+
+UPDATE tbPrato
+set valor = 650.45
+where idprato = 4
+
+DELETE from tbCliente
+WHERE   idcliente = 5
